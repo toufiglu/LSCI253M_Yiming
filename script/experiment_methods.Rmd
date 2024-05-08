@@ -11,7 +11,7 @@ source("library.R")
 ```
 
 ```{r}
-data <- read_csv("data/example_data_for_visualization.csv")
+data <- read_csv("../data/example_data_for_visualization.csv")
 mean_VOT <- data %>% 
   group_by(label, type) %>% 
   summarise(mean_vot = mean(vot)) %>% 
