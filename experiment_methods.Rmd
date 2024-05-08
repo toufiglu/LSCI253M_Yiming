@@ -7,9 +7,23 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, error=FALSE, warning = FALSE)
+source("library.R")
 ```
 
 ```{r}
+data <- read_csv("data/example_data_for_visualization.csv")
+mean_VOT <- data %>% 
+  group_by(label, type) %>% 
+  summarise(mean_vot = mean(vot)) %>% 
+  ungroup()
 
+p <- mean_VOT %>% 
+  ggplot(aes(x=label, y=mean_vot, fill=label)) +
+  geom_bar(stat="identity") +
+  facet_grid(~ type) +
+  scale_fill_brewer(palette="Set1")
+  
+p
 ```
 
+From the above analysis, it seems that VOT is longer for voiceless sounds than voiced sounds. There does not seem to be differences across different word classes.

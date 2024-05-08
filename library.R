@@ -1,0 +1,5 @@
+library(ndl)
+library(tidyverse)
+library(boot)
+library(mgcv)
+library(magrittr)
