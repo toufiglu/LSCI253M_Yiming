@@ -24,7 +24,10 @@ f_bar <- mean_VOT %>%
   scale_fill_brewer(palette="Set1")
   
 f_bar
+```
+From the above analysis, it seems that VOT is longer for voiceless sounds than voiced sounds. There does not seem to be differences across different word classes.
 
+```{r}
 f_scatter <- data %>% 
   filter(stop %in% c("B", "P")) %>% 
   ggplot(aes(x=vot, y=vdur, color=stop)) +
@@ -34,6 +37,7 @@ f_scatter <- data %>%
 
 f_scatter
 ```
+From the above analysis, VOT seems to be a strong indicator for the voicing contrast. However, vowel duration is not quite useful. These two categories overlap with each other by large.
 
-From the above analysis, it seems that VOT is longer for voiceless sounds than voiced sounds. There does not seem to be differences across different word classes.
+
 
