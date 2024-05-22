@@ -7,7 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, error=FALSE, warning = FALSE)
-source("library.R")
+source("../library.R")
 ```
 
 ```{r}
